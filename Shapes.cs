@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Reflection.Metadata.Ecma335;
-
 
 internal class Shapes : IEnumerable<Shape>, IEnumerator<Shape>
 {
@@ -9,14 +7,16 @@ internal class Shapes : IEnumerable<Shape>, IEnumerator<Shape>
 
     private int Index = -1;
 
-    public void AddElement(Shape shape)
+    public void AddElement(Shape? shape)
     {
-        ShapeList.Add(shape);
+        if (shape is not null)
+            ShapeList.Add(shape);
     }
 
-    public void RemoveElement(Shape shape)
+    public void RemoveElement(Shape? shape)
     {
-        ShapeList.Remove(shape);
+        if (shape is not null)
+            ShapeList.Remove(shape);
     }
 
     public Shape? Current => (Index != -1 ? ShapeList[Index] : null) as Shape;

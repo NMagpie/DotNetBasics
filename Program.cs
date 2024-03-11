@@ -6,6 +6,8 @@ shapes.AddElement(new Circle(4));
 
 shapes.AddElement(new Triangle(4, 5 ,6));
 
+shapes.AddElement(null);
+
 shapes.MoveNext();
 
 Console.WriteLine($"Rectangle area: {shapes.Current?.Area}, perimeter: {shapes.Current?.Perimeter}");
