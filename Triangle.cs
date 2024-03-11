@@ -35,5 +35,17 @@ internal class Triangle : Shape
         C = _C;
     }
 
+    public override void Dilate(double times)
+    {
+        this.A *= times;
+        this.B *= times;
+        this.C *= times;
+    }
 
+    public override void Dilate()
+    {
+        this.A *= 2;
+        this.B *= 2;
+        this.C *= 2;
+    }
 }

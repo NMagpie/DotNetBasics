@@ -9,4 +9,8 @@ internal abstract class Shape
 {
     public abstract double Area { get; }
     public abstract double Perimeter { get; }
+
+    public abstract void Dilate(double times);
+
+    public abstract void Dilate();
 }
