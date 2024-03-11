@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-internal class Triangle : Shape
+﻿internal class Triangle : Shape
 {
 
     private double A { get; set; }

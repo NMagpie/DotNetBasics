@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-internal class Circle : Shape
+﻿internal class Circle : Shape
 {
 
     private double Radius { get; set; }

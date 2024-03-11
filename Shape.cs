@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 
-internal abstract class Shape
+internal abstract class Shape : ICloneable
 {
     public abstract double Area { get; }
     public abstract double Perimeter { get; }
+
+    public object Clone()
+    {
+        return this.MemberwiseClone();
+    }
 
     public abstract void Dilate(double times);
 
