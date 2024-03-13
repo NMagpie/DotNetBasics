@@ -1,37 +1,17 @@
-﻿var shapes = new Shapes();
+﻿var shapes = new Shapes([new Rectangle(3), new Circle(4), new Triangle(4, 5, 6)]);
 
-shapes.AddElement(new Rectangle(3));
+foreach (var shape in shapes)
+{
+    Console.WriteLine($"{GetShapeName(shape)} area: {shape.Area}, perimeter: {shape.Perimeter}");
+}
 
-shapes.AddElement(new Circle(4));
-
-shapes.AddElement(new Triangle(4, 5 ,6));
-
-shapes.AddElement(null);
-
-shapes.MoveNext();
-
-Console.WriteLine($"Rectangle area: {shapes.Current?.Area}, perimeter: {shapes.Current?.Perimeter}");
-
-shapes.MoveNext();
-
-Console.WriteLine($"Circle area: {shapes.Current?.Area}, perimeter: {shapes.Current?.Perimeter}");
-
-shapes.MoveNext();
-
-Console.WriteLine($"Triangle area: {shapes.Current?.Area}, perimeter: {shapes.Current?.Perimeter}\n");
-
-shapes.Current?.Dilate();
-
-Console.WriteLine("Triangle was dilated by 2");
-
-Console.WriteLine($"Triangle area: {shapes.Current?.Area}, perimeter: {shapes.Current?.Perimeter}\n");
-
-shapes.Reset();
-
-shapes.MoveNext();
-
-shapes.Current?.Dilate(3.4);
-
-Console.WriteLine("Rectangle was dilated by 3.4");
-
-Console.WriteLine($"Rectangle area: {shapes.Current?.Area}, perimeter: {shapes.Current?.Perimeter}");
+string GetShapeName(Shape shape) =>
+/*    shape.GetType().Name;*/
+/*    shape switch
+    {
+        Triangle => "Triangle",
+        Rectangle => "Rectangle",
+        Circle => "Circle",
+        _ => "Unknown Shape"
+    };*/
+    shape is Triangle ? "Triangle" : shape is Rectangle ? "Rectangle" : shape is Circle ? "Circle" : "Unknown Shape";
